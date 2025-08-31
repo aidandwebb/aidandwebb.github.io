@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENPH 253 – Robot Summer | Aidan Webb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="left">
+      <a href="index.html">Aidan Webb</a>
+    </div>
+    <div class="right">
+      <a href="https://linkedin.com/in/YOUR-LINK" target="_blank">
+        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+      </a>
+      <a href="mailto:aidandwebb@gmail.com">
+        <i class="fa-solid fa-envelope"></i><span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="project-page">
+    <header class="project-header">
+      <h1>ENPH 253: Robot Summer</h1>
+      <p class="project-date">Summer 2023</p>
+    </header>
+
+    <section class="project-content">
+      <img src="images/robot-final.jpg" alt="Final Robot" class="project-hero">
+
+      <h2>Competition</h2>
+      <p>
+        ENPH 253 is the classic UBC Engineering Physics robot design course. 
+        Each summer, students work in teams to build fully autonomous robots capable of completing a themed challenge. 
+        In 2023, the scenario was a <strong>burning pet shelter</strong>: our robot had two minutes to rescue as many 
+        stuffed animal “pets” as possible from a hazard-filled building and bring them to safety.
+      </p>
+      <p>
+        The course surface featured ramps, a raised floor, obstacles, a chute, and multiple hiding spots for the pets. 
+        Robots had to autonomously navigate the taped path, locate and recover the pets, and deposit them safely outside. 
+        The competition was head-to-head, with two robots running simultaneously on mirrored surfaces.
+      </p>
+      <img src="images/course.png" alt="Competition Course Layout">
+
+      <h2>Construction</h2>
+      <p>
+        Our robot went through many stages of prototyping and redesign before reaching the final build. 
+        We started with rough mechanical prototypes, refined the chassis in CAD, and iterated until we had a working 
+        design that could handle the course requirements.
+      </p>
+      <div class="image-grid">
+        <img src="images/prototype1.jpg" alt="Early Prototype">
+        <img src="images/prototype2.jpg" alt="Second Prototype">
+        <img src="images/prototype3.png" alt="CAD Model">
+        <img src="images/final-build.jpg" alt="Final Robot Build">
+      </div>
+
+      <h2>Electrical</h2>
+      <p>
+        The electrical system was designed around custom PCBs and modular wiring for reliability. 
+        We integrated sensors, motor drivers, and a central microcontroller. 
+        Below are the circuit diagram and one of our final PCBs.
+      </p>
+      <div class="image-grid">
+        <img src="images/pcb-kicad.webp" alt="Circuit Diagram">
+        <img src="images/pcb-3d.png" alt="Custom PCB">
+        <img src="images/pcb.jpg" alt="Custom PCB">
+      </div>
+
+      <h2>Code</h2>
+      <p>
+        The software controlled motor actuation, sensor feedback, and decision-making for navigating the course. 
+        It was written in C and C++, with a focus on reliability and modularity so that we could test individual systems 
+        (motors, sensors, routines) before integrating everything.
+      </p>
+    </section>
+
+    <footer class="project-footer">
+      <a href="index.html#projects" class="back-link">&larr; Back to Projects</a>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Title</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>    
+    <!-- top bar with links -->
+    <nav>
+        <div class="left">
+         <a href="#">Aidan Webb</a>
+        </div>
+        
+        <div class="right">
+         <a href="http://" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-square-linkedin"></i>
+            <span>Linkedin</span>
+         </a>
+            
+         <a href="mailto:aidandwebb@gmail.com" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+         </a>
+        </div>
+    </nav>
+        
+    <main>
+        <!-- Top section thing -->
+        <section id="top">
+            <div class="intro">
+            <div class="intro-text">
+                <h1>Hello, I'm <span>Aidan Webb</span></h1>
+                <div class="section-nav">
+                    <a href="#about">About Me</a>
+                    <a href="#projects">Projects</a>
+                </div>
+            </div>
+            <img src="images/Thumbnail.webp" alt="Headshot of Aidan Webb">
+            </div>
+        </section>
+
+        
+<!-- About Me -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>Oh hello there! As you may know by now, my name is Aidan Webb 
+    and I am an undergraduate Engineering student currently enrolled 
+    in UBC's Engineering Physics program. 
+      Below you will find a handy carousel of my many skills  aswell
+    as a few personal details.</p>
+  
+  <div class="carousel">
+    <!-- Prev Button -->
+    <button class="carousel-btn prev">&#10094;</button>
+
+    <!-- Cards -->
+    <div class="about-card active" id="tech">
+      <h3>Technical Skills</h3>
+      <p>
+        - Solidworks/Fusion/OnShape <br>
+        - Java/C++/C <br>
+        - Verilog and Quartus Simulation <br>
+        - 3d Rendering and Visualization <br>
+      </p>
+    </div>
+
+    <div class="about-card" id="nontech">
+      <h3>Non-Technical Skills</h3>
+      <p>
+        - Fluent in English and French <br>
+        - Basic Mandarin and Korean abilities <br>
+        - First Aid CPR-C + AED certified <br>
+        - Swim and Water Safety Instructor Certified <br>
+        - Can do a handstand
+      </p>
+    </div>
+
+    <div class="about-card" id="hobbies">
+      <h3>Hobbies</h3>
+      <p>
+        - Weightlifting <br>
+        - Amateur gymnastics and acrobatics <br>
+        - Woodworking <br>
+        - Piano <br>
+        - Reading <br>
+        - Currently Studying Chinese
+      </p>
+    </div>
+
+    <div class="about-card" id="books">
+      <h3>Favourite Books</h3>
+      <p>
+        - The Name of The Wind <br>
+        - Project Hail Mary <br>
+        - Mary Shelley's Frankenstein <br>
+        - Pride and Prejudice
+      </p>
+    </div>
+
+    <div class="about-card" id="movies">
+      <h3>Favourite Movies</h3>
+      <p>
+        - Hot Fuzz <br>
+        - Interstellar <br>
+        - The Princess Bride <br>
+        - Curious George the Movie
+      </p>
+    </div>
+
+    <!-- Next Button -->
+    <button class="carousel-btn next">&#10095;</button>
+
+    <!-- Dots Nav -->
+    <div class="carousel-nav">
+      <span class="active" data-card="tech"></span>
+      <span data-card="nontech"></span>
+      <span data-card="hobbies"></span>
+      <span data-card="books"></span>
+      <span data-card="movies"></span>
+    </div>
+  </div>
+</section>
+        
+        <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+  <a href="Robot_Summer.html">
+    <img src="images/Robot%20Summer.png" alt="Robot Summer Project">
+    <h3>Robot Summer</h3>
+  </a>
+  <a href="CAD_Design_Project.html">
+    <img src="images/CAD%20Project.png" alt="CAD Design Project">
+    <h3>UBCO CAD Design Competition</h3>
+  </a>
+  <a href="Sustainabile_Trees.html">
+    <img src="images/TREES.png" alt="Sustainable Trees">
+    <h3>Sustainable Developement Competition</h3>
+  </a>
+  <a href="Verilog_CPU.html">
+    <img src="images/Verilog%20CPU.png" alt="Verilog CPU">
+    <h3>Verilog CPU</h3>
+  </a>
+</div>
+
+    </section>
+        
+        
+    </main>
+       
+<script>
+const dots = document.querySelectorAll('.carousel-nav span');
+const cards = document.querySelectorAll('.about-card');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+let currentIndex = 0;
+
+function showCard(index) {
+  // wrap around
+  if (index < 0) index = cards.length - 1;
+  if (index >= cards.length) index = 0;
+  currentIndex = index;
+
+  // update cards
+  cards.forEach(card => card.classList.remove('active'));
+  cards[currentIndex].classList.add('active');
+
+  // update dots
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[currentIndex].classList.add('active');
+}
+
+// Dots click
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => showCard(i));
+});
+
+// Arrow buttons
+prevBtn.addEventListener('click', () => showCard(currentIndex - 1));
+nextBtn.addEventListener('click', () => showCard(currentIndex + 1));
+
+// Init
+showCard(0);
+</script>
+
+
+    </body>
+    
+</html>
