@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verilog CPU | Aidan Webb</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,9 +32,10 @@
     <section class="project-content">
       <h2>Overview</h2>
       <p>
-        This project involved designing and implementing a <strong>16-bit RISC-style CPU</strong> in Verilog, then simulating and testing it on an Altera <strong>DE1-SoC FPGA</strong> board. 
-        The design followed a classic fetch–decode–execute cycle, with a state-machine controller directing the flow of execution. 
-        This controller interpreted the outputs of the <strong>instruction decoder</strong> (pictured below) and generated the appropriate control signals to drive the ALU and memory.
+        I see you are a connoisseur of RISC based computer architecture aren't you? 
+        This project involved designing and implementing a <strong>16-bit RISC-style CPU</strong> in Verilog, then simulating and testing it on an Altera <strong>DE1-SoC FPGA</strong> board.
+        The design followed a a standard 5 stage fetch–decode–execute-memory-writeback cycle (yeah I sort of paid attention in my classes), with a state-machine controller directing the flow of execution.
+        This controller interpreted the outputs of the instruction decoder module and generated the appropriate control signals to drive the ALU and memory.
       </p>
 
       <div class="image-grid">
@@ -41,8 +43,9 @@
       </div>
 
       <p>
-        The instruction set included pretty much all the usual instructions: arithmetic (<code>ADD</code>, <code>SUB</code>), logic (<code>AND</code>, <code>NOT</code>), 
-        data movement (<code>MOV</code>), and memory access (<code>LDR</code>, <code>STR</code>). 
+        While 16 bits does limit your instruction set a tad we were going for RISC anyways so it ended up being planty.
+        The instruction set included all the usual suspects: arithmetic (<code>ADD,SUB</code>), logic (<code>AND,MVN,CMP</code>), 
+        data movement (<code>MOV</code>), memory access (<code>LDR,STR</code>) and branch instrucitons (<code>B,BEQ,BNE,BLT,BLE</code>). 
         The <strong>ALU module</strong> carried out arithmetic and logical operations, while a dedicated block of RAM provided program memory and data storage. 
         The load/store capability made it possible to execute small test programs and observe the CPU’s behavior directly on the FPGA hardware.
       </p>
@@ -54,7 +57,7 @@
       <p>
         To bring everything together, the <strong>top-level CPU design</strong> (shown below) connected the instruction decoder, ALU, and memory into the datapath. I
         learned so much about about risc architecture and FPGA simulation over the course of this project. Hopefully going forward I'd like to learn more about branch prediction
-        to improve pipelining. This project also got me super interested in exploring superscalar architecture as well as vector processors like GPU design.
+        to improve pipelining (AI in branch prediction seems awesome). This project also got me super interested in exploring superscalar architecture as well as vector processors like GPU design.
       </p>
 
       <div class="image-grid">
@@ -64,11 +67,8 @@
       <h2>Key Features</h2>
       <ul>
         <li><strong>Word size:</strong> 16-bit</li>
-        <li><strong>Instruction set:</strong> Arithmetic (<code>ADD</code>, <code>SUB</code>), logic (<code>AND</code>, <code>NOT</code>), data movement (<code>MOV</code>), memory (<code>LDR</code>, <code>STR</code>)</li>
-        <li><strong>Architecture:</strong> Single-cycle state-machine controlled (fetch–decode–execute)</li>
-        <li><strong>Components:</strong> Custom instruction decoder, ALU, RAM interface</li>
-        <li><strong>Target platform:</strong> DE1-SoC FPGA</li>
-        <li><strong>Development language:</strong> Verilog</li>
+    <li><strong>Platform:</strong> Altera DE1-SoC FPGA</li>
+    <li><strong>Language:</strong> Verilog</li>
       </ul>
     </section>
 
