@@ -13,7 +13,7 @@
       <a href="index.html">Aidan Webb</a>
     </div>
     <div class="right">
-      <a href="https://linkedin.com/in/YOUR-LINK" target="_blank">
+      <a href="https://www.linkedin.com/in/aidandwebbs" target="_blank">
         <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
       </a>
       <a href="mailto:aidandwebb@gmail.com">
@@ -25,7 +25,7 @@
   <main class="project-page">
     <header class="project-header">
       <h1>ENPH 253: Robot Summer</h1>
-      <p class="project-date">Summer 2023</p>
+      <p class="project-date">Summer 2025</p>
     </header>
 
     <section class="project-content">
@@ -33,23 +33,20 @@
 
       <h2>Competition</h2>
       <p>
-        ENPH 253 is the classic UBC Engineering Physics robot design course. 
-        Each summer, students work in teams to build fully autonomous robots capable of completing a themed challenge. 
-        In 2023, the scenario was a <strong>burning pet shelter</strong>: our robot had two minutes to rescue as many 
-        stuffed animal “pets” as possible from a hazard-filled building and bring them to safety.
-      </p>
-      <p>
-        The course surface featured ramps, a raised floor, obstacles, a chute, and multiple hiding spots for the pets. 
-        Robots had to autonomously navigate the taped path, locate and recover the pets, and deposit them safely outside. 
-        The competition was head-to-head, with two robots running simultaneously on mirrored surfaces.
+        This summer I got to take part in the annual Engineering Physics Robot Summer competition and it was arguably
+        the most interesting, challenging and absolutely enjoyable thing I have ever had the pleasure of enduring. Every 
+        year the competition takes place there is a new theme and for us the scenario was a <strong>burning pet shelter</strong>:
+        our robot had two minutes to rescue as many stuffed animal pets from the course, a hazard-filled building and bring them back
+        to a safe zone.
       </p>
       <img src="images/course.png" alt="Competition Course Layout">
 
       <h2>Construction</h2>
       <p>
-        Our robot went through many stages of prototyping and redesign before reaching the final build. 
-        We started with rough mechanical prototypes, refined the chassis in CAD, and iterated until we had a working 
-        design that could handle the course requirements.
+        I got to learn so much about the design process throughout this course, we started with really quick "shape" prototypes,
+        where the main idea was to just get a feel for the robots general form, this is where rapidly being able to cutout shapes
+        on the laser cutter came in handy. Afterwards the same laser cutting techniques were used to make our finished chassis and
+        also extended to designing parts that could be made on the waterjet.
       </p>
       <div class="image-grid">
         <img src="images/prototype1.jpg" alt="Early Prototype">
@@ -60,9 +57,12 @@
 
       <h2>Electrical</h2>
       <p>
-        The electrical system was designed around custom PCBs and modular wiring for reliability. 
-        We integrated sensors, motor drivers, and a central microcontroller. 
-        Below are the circuit diagram and one of our final PCBs.
+        The electrical system taught me a ridiculous amount about the nature of debugging, from parasitic capacitance to
+        noise propagating through the ground planes on the pcb there were so many small things I picked up. Truly the 
+        realization that the lumped linear circuits model I was taught in my circuit analysis classes is just a model is a
+        fun but painful lesson to take. For the robot I got experience working with KiCad aswell as using tools like my 
+        wavegen and oscillascope to debug. I also certainly inhaled a fair amount of solder fumes but hopefully it wont 
+        hurt my average too much in the coming semesters.
       </p>
       <div class="image-grid">
         <img src="images/pcb-kicad.webp" alt="Circuit Diagram">
@@ -73,11 +73,18 @@
 
       <h2>Code</h2>
       <p>
-        The software controlled motor actuation, sensor feedback, and decision-making for navigating the course. 
-        It was written in C and C++, with a focus on reliability and modularity so that we could test individual systems 
-        (motors, sensors, routines) before integrating everything.
+        We maintained a very object oriented approach when it came to software, I don't exactly have a picture to put here
+        (looking at C++ is sometimes a tad boring.) But I can definitely say that the idea of trying to make code for all your
+        componants into a black box is a wonderful ideology for a programmer to have and one I definitely got to implement over
+        the course of this project.
       </p>
     </section>
+    <h2>Key Skillss</h2>
+      <ul>
+        <li><strong>Software Tools:</strong> KiCad, Altium, Onshape, Solidworks</li>
+        <li><strong>Physical Tools:</strong> Multimeter, Oscilliscope, Wavegen, Shop-Tools</li>
+        <li><strong>Manufacturing/Prototyping techniques:</strong> Laser Cutter, Water Jet, 3d printer, Lathe/Milling Machine</li>
+      </ul>
 
     <footer class="project-footer">
       <a href="index.html#projects" class="back-link">&larr; Back to Projects</a>

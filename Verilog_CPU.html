@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verilog CPU | Aidan Webb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="left">
+      <a href="index.html">Aidan Webb</a>
+    </div>
+    <div class="right">
+      <a href="https://www.linkedin.com/in/aidandwebb" target="_blank">
+        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+      </a>
+      <a href="mailto:aidandwebb@gmail.com">
+        <i class="fa-solid fa-envelope"></i><span>Email</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="project-page">
+    <header class="project-header">
+      <h1>16-bit RISC-based CPU</h1>
+      <p class="project-date">Winter 2024</p>
+    </header>
+
+    <section class="project-content">
+      <h2>Overview</h2>
+      <p>
+        This project involved designing and implementing a <strong>16-bit RISC-style CPU</strong> in Verilog, then simulating and testing it on an Altera <strong>DE1-SoC FPGA</strong> board. 
+        The design followed a classic fetch–decode–execute cycle, with a state-machine controller directing the flow of execution. 
+        This controller interpreted the outputs of the <strong>instruction decoder</strong> (pictured below) and generated the appropriate control signals to drive the ALU and memory.
+      </p>
+
+      <div class="image-grid">
+        <img src="images/Instruction%20Decoder.png" alt="Instruction Decoder RTL">
+      </div>
+
+      <p>
+        The instruction set included pretty much all the usual instructions: arithmetic (<code>ADD</code>, <code>SUB</code>), logic (<code>AND</code>, <code>NOT</code>), 
+        data movement (<code>MOV</code>), and memory access (<code>LDR</code>, <code>STR</code>). 
+        The <strong>ALU module</strong> carried out arithmetic and logical operations, while a dedicated block of RAM provided program memory and data storage. 
+        The load/store capability made it possible to execute small test programs and observe the CPU’s behavior directly on the FPGA hardware.
+      </p>
+
+      <div class="image-grid">
+        <img src="images/ALU.png" alt="ALU RTL">
+      </div>
+
+      <p>
+        To bring everything together, the <strong>top-level CPU design</strong> (shown below) connected the instruction decoder, ALU, and memory into the datapath. I
+        learned so much about about risc architecture and FPGA simulation over the course of this project. Hopefully going forward I'd like to learn more about branch prediction
+        to improve pipelining. This project also got me super interested in exploring superscalar architecture as well as vector processors like GPU design.
+      </p>
+
+      <div class="image-grid">
+        <img src="images/Complete.png" alt="Full CPU RTL">
+      </div>
+
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Word size:</strong> 16-bit</li>
+        <li><strong>Instruction set:</strong> Arithmetic (<code>ADD</code>, <code>SUB</code>), logic (<code>AND</code>, <code>NOT</code>), data movement (<code>MOV</code>), memory (<code>LDR</code>, <code>STR</code>)</li>
+        <li><strong>Architecture:</strong> Single-cycle state-machine controlled (fetch–decode–execute)</li>
+        <li><strong>Components:</strong> Custom instruction decoder, ALU, RAM interface</li>
+        <li><strong>Target platform:</strong> DE1-SoC FPGA</li>
+        <li><strong>Development language:</strong> Verilog</li>
+      </ul>
+    </section>
+
+    <footer class="project-footer">
+      <a href="index.html#projects" class="back-link">&larr; Back to Projects</a>
+    </footer>
+  </main>
+</body>
+</html>
