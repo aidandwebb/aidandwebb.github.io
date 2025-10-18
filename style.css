@@ -112,7 +112,10 @@ nav .right a span {
 }
 
 #about {
-  padding: 100px 20px;
+  max-width: 1100px;
+  margin: 100px auto 50px; /* space for fixed nav */
+  padding: 0 20px;
+  line-height: 1.6;
   text-align: center;
 }
 
@@ -124,6 +127,7 @@ nav .right a span {
 /* Carousel container */
 .carousel {
   max-width: 800px;
+  padding: 10px 0;
   margin: 0 auto;
   position: relative;
 }
