@@ -3,181 +3,320 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aidan Webb</title>
-  <meta name="description" content="Aidan Webb — Engineering Physics student at UBC working across hardware, firmware and robotics.">
+  <title>Aidan Webb | Engineering Physics</title>
+  <meta name="description" content="Aidan Webb, Engineering Physics student at UBC working across hardware, firmware and robotics.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="#top" class="brand">Aidan Webb</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <header class="site-header">
+    <a href="#top" class="logo" aria-label="Home">AW</a>
+    <nav class="nav">
+      <a href="#about"><span>01.</span> About</a>
+      <a href="#experience"><span>02.</span> Experience</a>
+      <a href="#projects"><span>03.</span> Projects</a>
+      <a href="#contact"><span>04.</span> Contact</a>
+      <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Resume <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </nav>
+  </header>
+
+  <aside class="rail rail-left" aria-label="Social links">
+    <a href="https://github.com/aidandwebb" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/aidandwebb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="mailto:aidandwebb@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+  </aside>
+  <aside class="rail rail-right">
+    <a href="mailto:aidandwebb@gmail.com" class="rail-email">aidandwebb@gmail.com</a>
+  </aside>
 
   <main id="top">
-    <header class="hero">
-      <img src="images/Thumbnail.webp" alt="Portrait of Aidan Webb" class="avatar">
-      <div>
-        <h1>Aidan Webb</h1>
-        <p class="lede">Engineering Physics student at UBC building things where hardware, firmware and software meet.</p>
-        <div class="links">
-          <a href="mailto:aidandwebb@gmail.com">Email</a>
-          <a href="https://www.linkedin.com/in/aidandwebb/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
-        </div>
+    <!-- Hero -->
+    <section class="hero">
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>Aidan Webb.</h1>
+      <h2 class="hero-sub">I build robots, circuits and the firmware in between.</h2>
+      <p class="hero-text">
+        I'm an <strong>Engineering Physics student</strong> at UBC, currently working as an
+        <strong>instrumentation engineering co-op</strong> at ScopeSys Microfluidics. I like projects that
+        span the whole stack, from <strong>PCBs</strong> and <strong>control loops</strong> to the
+        <strong>software</strong> that ties them together.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:aidandwebb@gmail.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Get in touch</a>
+        <a href="#projects" class="btn btn-outline">View projects</a>
       </div>
-    </header>
+    </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I'm an undergraduate in UBC's Engineering Physics program (Dean's List), currently on co-op as an
-        instrumentation engineer at ScopeSys Microfluidics. I enjoy work that spans the whole stack: designing
-        a PCB, writing the firmware that runs on it, and debugging it with a scope when the lumped-circuit model
-        stops being true.
-      </p>
-      <p>
-        Outside of engineering I lift, practice gymnastics and acrobatics (I can do a handstand), do some
-        woodworking, play piano and read. I speak English and French, and I'm studying Mandarin.
-      </p>
-
-      <div class="facts">
-        <div>
-          <h3>Technical</h3>
-          <p>C / C++, Python, Verilog, Java · ESP32, Zephyr, ROS · KiCad, Altium, LTspice · SolidWorks, Onshape · Quartus, ModelSim</p>
+    <!-- About -->
+    <section id="about" class="section">
+      <h2 class="section-title"><span>01.</span> About Me</h2>
+      <div class="about">
+        <div class="about-text">
+          <p>
+            Hi, I'm Aidan. I'm a third-year Engineering Physics student at UBC (Dean's List) with a soft spot for
+            problems that don't respect the boundary between hardware and software. The most rewarding moments for
+            me are when a scope trace finally makes sense, like discovering that the lumped circuit model I learned
+            in class really is <em>just</em> a model.
+          </p>
+          <p>
+            Right now I'm on co-op at <a href="#experience">ScopeSys Microfluidics</a>, writing Zephyr firmware and
+            Python tooling for a pressure-control instrument. Before that I built an autonomous rescue robot for
+            Robot Summer, a 16-bit CPU on an FPGA, and a team of simulated drones.
+          </p>
+          <p>
+            Away from the bench I lift, practise gymnastics (yes, I can do a handstand), do woodworking, play piano,
+            and am slowly working through Mandarin. I'm also fluent in French. Current favourite book:
+            <em>The Name of the Wind</em>.
+          </p>
+          <p>Some of the tools I've been working with recently:</p>
+          <ul class="skill-list">
+            <li>C / C++</li>
+            <li>Python</li>
+            <li>Verilog</li>
+            <li>Zephyr / ESP-IDF</li>
+            <li>ROS</li>
+            <li>KiCad</li>
+            <li>SolidWorks / Onshape</li>
+            <li>Quartus / ModelSim</li>
+          </ul>
         </div>
-        <div>
-          <h3>Shop &amp; lab</h3>
-          <p>Oscilloscope, wavegen, multimeter · Laser cutter, waterjet, 3D printing, lathe &amp; mill</p>
-        </div>
-        <div>
-          <h3>Currently reading</h3>
-          <p>Favourites so far: <em>The Name of the Wind</em>, <em>Project Hail Mary</em>, <em>Frankenstein</em>, <em>Pride and Prejudice</em>.</p>
+        <div class="portrait">
+          <img src="images/Thumbnail.webp" alt="Portrait of Aidan Webb">
         </div>
       </div>
     </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="entry">
-        <div class="entry-head">
-          <h3>Instrumentation Engineering Co-op <span class="muted">· ScopeSys Microfluidics</span></h3>
-          <span class="date">May 2026 — Present</span>
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <h2 class="section-title"><span>02.</span> Where I've Worked</h2>
+      <div class="tabs">
+        <div class="tab-list" role="tablist" aria-label="Experience">
+          <button role="tab" aria-selected="true" aria-controls="job-scopesys" id="tab-scopesys">ScopeSys</button>
+          <button role="tab" aria-selected="false" aria-controls="job-ubc" id="tab-ubc" tabindex="-1">UBC</button>
         </div>
-        <ul>
-          <li>Implemented an open-loop controller in C on a Zephyr firmware stack with handoff to a tuned PID loop, smoothing control ahead of product launch.</li>
-          <li>Built Python CLI and GUI tooling with real-time telemetry for a multi-channel pressure and vacuum instrument used for nanoparticle confinement.</li>
-          <li>Designed precision alignment fixtures and motion-control systems for assembling multilayer lab-on-chip devices.</li>
-        </ul>
-      </div>
-      <div class="entry">
-        <div class="entry-head">
-          <h3>B.A.Sc. Engineering Physics <span class="muted">· University of British Columbia</span></h3>
-          <span class="date">2023 — 2027</span>
+
+        <div class="card job" role="tabpanel" id="job-scopesys" aria-labelledby="tab-scopesys">
+          <div class="job-head">
+            <span class="job-logo">S</span>
+            <div>
+              <h3>Instrumentation Engineering Co-op <span class="at">@ ScopeSys Microfluidics</span></h3>
+              <p class="job-date">May 2026 – Present</p>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li>Implemented an open-loop controller in C on a Zephyr firmware stack, handing off to a tuned PID loop to smooth pressure control ahead of product launch.</li>
+            <li>Developed Python CLI and GUI tooling with real-time telemetry for a multi-channel pressure and vacuum instrument used for nanoparticle confinement.</li>
+            <li>Packaged internal engineering tools into standalone executables with PyInstaller to simplify deployment across lab systems.</li>
+            <li>Designed precision alignment fixtures and motion-control systems for assembling multilayer lab-on-chip devices.</li>
+          </ul>
+        </div>
+
+        <div class="card job" role="tabpanel" id="job-ubc" aria-labelledby="tab-ubc" hidden>
+          <div class="job-head">
+            <span class="job-logo">U</span>
+            <div>
+              <h3>B.A.Sc. Engineering Physics <span class="at">@ University of British Columbia</span></h3>
+              <p class="job-date">2023 – 2027</p>
+            </div>
+          </div>
+          <ul class="bullets">
+            <li>Dean's List, 85% average.</li>
+            <li>Project courses include ENPH 253 (Robot Summer) and ENPH 353 (autonomous drones, 2nd of 15 teams).</li>
+            <li>Coursework spanning digital logic and computer architecture, analog circuits, control systems and machine learning.</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2 class="section-title"><span>03.</span> Some Things I've Built</h2>
 
-      <article class="project">
-        <div class="entry-head">
-          <h3>Multi-Agent Autonomous Drone System</h3>
-          <span class="date">Jan — Apr 2026</span>
+      <!-- Robot Summer -->
+      <article class="card feature">
+        <div class="feature-media">
+          <span class="badge"><i class="fa-regular fa-star"></i> Featured</span>
+          <img src="images/final-build.jpg" alt="Robot Summer autonomous rescue robot">
         </div>
-        <p>Distributed ROS architecture for simulated drones with LiDAR/IMU/optical-flow sensor fusion and TensorFlow OCR models (&gt;98% accuracy). Maximum competition score and 2nd of 15 teams in ENPH 353.</p>
-        <p class="tags">ROS · Gazebo · Python · TensorFlow · OpenCV</p>
-      </article>
-
-      <article class="project">
-        <div class="entry-head">
-          <h3>EEG Brain-Computer Interface</h3>
-          <span class="date">Jan 2026 — Ongoing</span>
-        </div>
-        <p>Multi-stage analog front end for measuring alpha and beta brainwaves, with active filtering and 60&nbsp;Hz notch suppression, feeding a 16-bit ADC read by an ESP32 and streamed to host software.</p>
-        <p class="tags">Analog design · KiCad · LTspice · ESP32 · C++</p>
-      </article>
-
-      <article class="project">
-        <div class="entry-head">
-          <h3>Robot Summer: Autonomous Rescue Robot</h3>
-          <span class="date">Summer 2025</span>
-        </div>
-        <p>ENPH 253's scenario was a burning pet shelter: two minutes to find stuffed-animal "pets" in a hazard-filled course and bring them to safety. Our team built a fully autonomous robot with custom ESP32 PCBs, PID motor control and state-machine navigation.</p>
-        <p class="tags">ESP32 · KiCad · C++ · Onshape · Laser cutting · Waterjet</p>
-        <img src="images/robot-final.jpg" alt="The finished competition robot" class="figure">
-        <details>
-          <summary>Read more</summary>
-          <h4>Mechanical</h4>
-          <p>We started with quick shape prototypes cut on the laser cutter to get a feel for the robot's form, then used the same process for the final chassis and extended it to waterjet-cut parts.</p>
-          <div class="gallery">
-            <img src="images/prototype1.jpg" alt="Early prototype" loading="lazy">
-            <img src="images/prototype2.jpg" alt="Second prototype" loading="lazy">
-            <img src="images/prototype3.png" alt="CAD model" loading="lazy">
-            <img src="images/final-build.jpg" alt="Final build" loading="lazy">
+        <div class="feature-body">
+          <p class="feature-date">Summer 2025</p>
+          <h3>Autonomous Rescue Robot</h3>
+          <div class="feature-desc">
+            <p>For ENPH 253's Robot Summer, the course was a burning pet shelter and our robot had two minutes to find stuffed-animal "pets" and carry them to safety. We designed and built a fully autonomous robot from scratch in six weeks.</p>
+            <p class="highlight"><i class="fa-solid fa-microchip"></i> Custom ESP32 PCBs, PID motor control and state-machine navigation</p>
           </div>
-          <h4>Electrical</h4>
-          <p>The electronics were a crash course in real-world debugging: parasitic capacitance, noise coupling through ground planes, and the moment you realize the lumped circuit model really is just a model. I designed boards in KiCad with separated analog and digital paths and debugged them with a scope and wavegen.</p>
-          <div class="gallery">
-            <img src="images/pcb-kicad.webp" alt="KiCad schematic" loading="lazy">
-            <img src="images/PCB-render.png" alt="PCB render" loading="lazy">
-            <img src="images/PCB-render2.png" alt="PCB render, alternate view" loading="lazy">
-            <img src="images/pcb.jpg" alt="Assembled PCB" loading="lazy">
+          <ul class="tags"><li>C++</li><li>ESP32</li><li>KiCad</li><li>Onshape</li><li>Laser cutting</li><li>Waterjet</li></ul>
+        </div>
+        <details class="more">
+          <summary><span>Read the full write-up</span></summary>
+          <div class="more-body">
+            <div class="more-text">
+              <h4><i class="fa-solid fa-gears"></i> Mechanical</h4>
+              <p>We started with quick shape prototypes cut on the laser cutter to get a feel for the robot's form, then used the same process for the final chassis and extended it to waterjet-cut parts.</p>
+            </div>
+            <div class="gallery">
+              <img src="images/prototype1.jpg" alt="Early prototype" loading="lazy">
+              <img src="images/prototype2.jpg" alt="Second prototype" loading="lazy">
+              <img src="images/prototype3.png" alt="CAD model" loading="lazy">
+              <img src="images/robot-final.jpg" alt="Final robot" loading="lazy">
+            </div>
+            <div class="more-text">
+              <h4><i class="fa-solid fa-bolt"></i> Electrical</h4>
+              <p>The electronics were a crash course in real-world debugging: parasitic capacitance, noise coupling through ground planes, and many hours with a scope and wavegen. I designed ESP32-based boards in KiCad with distributed power regulation and separated analog and digital signal paths.</p>
+            </div>
+            <div class="gallery">
+              <img src="images/pcb-kicad.webp" alt="KiCad schematic" loading="lazy">
+              <img src="images/PCB-render.png" alt="PCB render" loading="lazy">
+              <img src="images/PCB-render2.png" alt="PCB render, alternate view" loading="lazy">
+              <img src="images/pcb.jpg" alt="Assembled PCB" loading="lazy">
+            </div>
+            <div class="more-text">
+              <h4><i class="fa-solid fa-code"></i> Software</h4>
+              <p>Firmware was object-oriented C++, with each component behind a clean interface so the navigation logic could treat hardware as a black box. We fused IMU, Hall-effect, IR and magnetometer data for homing and localization, and tuned PID gains wirelessly over WiFi.</p>
+            </div>
+            <img src="images/course.png" alt="Competition course layout" class="wide" loading="lazy">
           </div>
-          <h4>Software</h4>
-          <p>Firmware was written in object-oriented C++, with each component wrapped behind a clean interface so higher-level navigation logic could treat hardware as a black box. PID gains were tuned wirelessly over WiFi.</p>
-          <img src="images/course.png" alt="Competition course layout" class="figure" loading="lazy">
         </details>
       </article>
 
-      <article class="project">
-        <div class="entry-head">
+      <!-- CPU -->
+      <article class="card feature flip">
+        <div class="feature-media diagram">
+          <img src="images/Complete.png" alt="Top-level RTL of the 16-bit CPU">
+        </div>
+        <div class="feature-body">
+          <p class="feature-date">Sep 2024 – Jan 2025</p>
           <h3>16-bit RISC CPU</h3>
-          <span class="date">Sep 2024 — Jan 2025</span>
+          <div class="feature-desc">
+            <p>A custom RISC processor written in Verilog with ARM-inspired instruction decoding and memory-mapped I/O, deployed to a DE1-SoC FPGA and running hand-written assembly programs.</p>
+            <p class="highlight"><i class="fa-solid fa-circle-check"></i> Verified with self-checking testbenches in ModelSim</p>
+          </div>
+          <ul class="tags"><li>Verilog</li><li>Quartus</li><li>ModelSim</li><li>FPGA</li><li>ARM assembly</li></ul>
         </div>
-        <p>A custom RISC processor in Verilog with ARM-inspired instruction decoding and memory-mapped I/O, verified with self-checking testbenches and deployed to a DE1-SoC FPGA.</p>
-        <p class="tags">Verilog · Quartus · ModelSim · FPGA</p>
-        <details>
-          <summary>Read more</summary>
-          <p>A state-machine controller interprets the instruction decoder's output and drives control signals for the ALU and memory through fetch, decode, execute, memory and writeback.</p>
-          <img src="images/Instruction%20Decoder.png" alt="Instruction decoder RTL" class="figure" loading="lazy">
-          <p>The instruction set covers arithmetic (<code>ADD</code>, <code>SUB</code>), logic (<code>AND</code>, <code>MVN</code>, <code>CMP</code>), data movement (<code>MOV</code>), memory access (<code>LDR</code>, <code>STR</code>) and branches (<code>B</code>, <code>BEQ</code>, <code>BNE</code>, <code>BLT</code>, <code>BLE</code>). Load/store support made it possible to run small programs and watch the CPU's behaviour directly on the board.</p>
-          <img src="images/ALU.png" alt="ALU RTL" class="figure" loading="lazy">
-          <p>The top-level design ties the decoder, ALU and memory into a single datapath. The project left me keen to go further into branch prediction, superscalar designs and vector processors like GPUs.</p>
-          <img src="images/Complete.png" alt="Complete CPU RTL" class="figure" loading="lazy">
+        <details class="more">
+          <summary><span>Read the full write-up</span></summary>
+          <div class="more-body">
+            <div class="more-text">
+              <h4><i class="fa-solid fa-diagram-project"></i> Control</h4>
+              <p>A state-machine controller reads the instruction decoder's output and drives the control signals for the ALU and memory through fetch, decode, execute, memory and writeback.</p>
+            </div>
+            <div class="gallery gallery-2">
+              <img src="images/Instruction%20Decoder.png" alt="Instruction decoder RTL" loading="lazy">
+              <img src="images/ALU.png" alt="ALU RTL" loading="lazy">
+            </div>
+            <div class="more-text">
+              <h4><i class="fa-solid fa-list-ol"></i> Instruction set</h4>
+              <p>Arithmetic (<code>ADD</code> <code>SUB</code>), logic (<code>AND</code> <code>MVN</code> <code>CMP</code>), data movement (<code>MOV</code>), memory access (<code>LDR</code> <code>STR</code>) and branching (<code>B</code> <code>BEQ</code> <code>BNE</code> <code>BLT</code> <code>BLE</code>). Load/store support made it possible to run small programs and watch the CPU work on the board's switches and LEDs.</p>
+              <p>The project left me keen to go further into branch prediction, superscalar designs and vector processors like GPUs.</p>
+            </div>
+          </div>
         </details>
       </article>
 
-      <article class="project">
-        <div class="entry-head">
-          <h3>UBCO CAD Design Competition: 1st Place</h3>
-          <span class="date">2024</span>
+      <!-- CAD -->
+      <article class="card feature">
+        <div class="feature-media">
+          <span class="badge"><i class="fa-solid fa-trophy"></i> 1st of 94 teams</span>
+          <img src="images/CAD%20Project.png" alt="Rendered snowcat from the CAD competition entry" class="crop-top">
         </div>
-        <p>Our team won first place out of 94 teams with a complete ski hill modelled in SolidWorks, including a working chairlift and snowcat, totalling over 12,000 parts.</p>
-        <p class="tags">SolidWorks · Rendering</p>
-        <div class="video">
-          <iframe src="https://www.youtube-nocookie.com/embed/-V5GGG-GRuw" title="CAD competition ski hill walkthrough" loading="lazy"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="feature-body">
+          <p class="feature-date">2024</p>
+          <h3>UBCO CAD Design Competition</h3>
+          <div class="feature-desc">
+            <p>Our team modelled an entire ski hill in SolidWorks, complete with a working chairlift and snowcat, totalling more than 12,000 parts. It took first place out of 94 teams.</p>
+            <p class="highlight"><i class="fa-solid fa-trophy"></i> First place, UBCO CAD Design Competition</p>
+          </div>
+          <ul class="tags"><li>SolidWorks</li><li>Assemblies</li><li>Rendering</li></ul>
         </div>
+        <details class="more">
+          <summary><span>Watch the walkthrough</span></summary>
+          <div class="more-body">
+            <div class="video">
+              <iframe src="https://www.youtube-nocookie.com/embed/-V5GGG-GRuw" title="CAD competition ski hill walkthrough" loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </details>
       </article>
+
+      <h3 class="subhead">Other Noteworthy Projects</h3>
+      <div class="mini-grid">
+        <article class="card mini">
+          <div class="mini-top">
+            <i class="fa-solid fa-helicopter mini-icon"></i>
+            <span class="mini-date">Jan – Apr 2026</span>
+          </div>
+          <h4>Multi-Agent Drone System</h4>
+          <p>Distributed ROS architecture for simulated drones with LiDAR, IMU and optical-flow sensor fusion, plus TensorFlow OCR models at over 98% accuracy. Maximum score and 2nd of 15 teams in ENPH 353.</p>
+          <ul class="tags"><li>ROS</li><li>Gazebo</li><li>Python</li><li>TensorFlow</li><li>OpenCV</li></ul>
+        </article>
+        <article class="card mini">
+          <div class="mini-top">
+            <i class="fa-solid fa-brain mini-icon"></i>
+            <span class="mini-date">Jan 2026 – Ongoing</span>
+          </div>
+          <h4>EEG Brain-Computer Interface</h4>
+          <p>A multi-stage analog front end that picks up alpha and beta brainwaves, with active filtering and 60&nbsp;Hz notch suppression, feeding a 16-bit ADC read by an ESP32 and streamed to a host.</p>
+          <ul class="tags"><li>Analog design</li><li>LTspice</li><li>KiCad</li><li>ESP32</li><li>I²C</li></ul>
+        </article>
+        <article class="card mini">
+          <div class="mini-top">
+            <i class="fa-solid fa-seedling mini-icon"></i>
+            <span class="mini-date">2023</span>
+          </div>
+          <h4>Sustainable Design Project</h4>
+          <p>A prototype for a sustainable development design competition, built with an Arduino and 3D-printed parts. A full write-up is on the way; ask me about it in the meantime.</p>
+          <ul class="tags"><li>Arduino</li><li>Prototyping</li><li>3D printing</li></ul>
+        </article>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>I'm always happy to talk about hardware, robotics or co-op opportunities. The best way to reach me is by <a href="mailto:aidandwebb@gmail.com">email</a>, or find me on <a href="https://www.linkedin.com/in/aidandwebb/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <p class="eyebrow"><span>04.</span> What's next?</p>
+      <h2>Get In Touch</h2>
+      <p>I'm always happy to chat about hardware, robotics, or co-op and new-grad opportunities. Whether you have a question or just want to say hi, my inbox is open.</p>
+      <div class="hero-actions center">
+        <a href="mailto:aidandwebb@gmail.com" class="btn btn-primary"><i class="fa-regular fa-envelope"></i> Say hello</a>
+        <a href="https://www.linkedin.com/in/aidandwebb/" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">© 2026 Aidan Webb</footer>
+  <footer class="footer">
+    <div class="footer-icons">
+      <a href="https://github.com/aidandwebb" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/aidandwebb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      <a href="mailto:aidandwebb@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+    </div>
+    <p>Designed &amp; built by Aidan Webb</p>
+  </footer>
+
+  <script>
+    // Experience tabs
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    function select(tab) {
+      tabs.forEach(t => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(tab));
+      tab.addEventListener('keydown', e => {
+        const d = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (!d) return;
+        e.preventDefault();
+        const next = tabs[(i + d + tabs.length) % tabs.length];
+        next.focus();
+        select(next);
+      });
+    });
+  </script>
 </body>
 </html>
