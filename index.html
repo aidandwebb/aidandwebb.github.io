@@ -1,199 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>Aidan's Awesome Personal Website</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
-    <body>    
-    <!-- top bar with links -->
-    <nav>
-        <div class="left">
-         <a href="#">Aidan Webb</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aidan Webb</title>
+  <meta name="description" content="Aidan Webb — Engineering Physics student at UBC working across hardware, firmware and robotics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">Aidan Webb</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <img src="images/Thumbnail.webp" alt="Portrait of Aidan Webb" class="avatar">
+      <div>
+        <h1>Aidan Webb</h1>
+        <p class="lede">Engineering Physics student at UBC building things where hardware, firmware and software meet.</p>
+        <div class="links">
+          <a href="mailto:aidandwebb@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/aidandwebb/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
         </div>
-        
-        <div class="right">
-         <a href="https://www.linkedin.com/in/aidandwebb/" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-square-linkedin"></i>
-            <span>Linkedin</span>
-         </a>
-            
-         <a href="mailto:aidandwebb@gmail.com" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Email</span>
-         </a>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I'm an undergraduate in UBC's Engineering Physics program (Dean's List), currently on co-op as an
+        instrumentation engineer at ScopeSys Microfluidics. I enjoy work that spans the whole stack: designing
+        a PCB, writing the firmware that runs on it, and debugging it with a scope when the lumped-circuit model
+        stops being true.
+      </p>
+      <p>
+        Outside of engineering I lift, practice gymnastics and acrobatics (I can do a handstand), do some
+        woodworking, play piano and read. I speak English and French, and I'm studying Mandarin.
+      </p>
+
+      <div class="facts">
+        <div>
+          <h3>Technical</h3>
+          <p>C / C++, Python, Verilog, Java · ESP32, Zephyr, ROS · KiCad, Altium, LTspice · SolidWorks, Onshape · Quartus, ModelSim</p>
         </div>
-    </nav>
-        
-    <main>
-        <!-- Top section thing -->
-        <section id="top">
-            <div class="intro">
-            <div class="intro-text">
-                <h1>Hello, I'm <span>Aidan Webb</span></h1>
-                <div class="section-nav">
-                    <a href="#about">About Me</a>
-                    <a href="#projects">Projects</a>
-                </div>
-            </div>
-            <img src="images/Thumbnail.webp" alt="Headshot of Aidan Webb">
-            </div>
-        </section>
+        <div>
+          <h3>Shop &amp; lab</h3>
+          <p>Oscilloscope, wavegen, multimeter · Laser cutter, waterjet, 3D printing, lathe &amp; mill</p>
+        </div>
+        <div>
+          <h3>Currently reading</h3>
+          <p>Favourites so far: <em>The Name of the Wind</em>, <em>Project Hail Mary</em>, <em>Frankenstein</em>, <em>Pride and Prejudice</em>.</p>
+        </div>
+      </div>
+    </section>
 
-        
-<!-- About Me -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    Oh hello there! As you may have figured out by now, my name is Aidan Webb.
-    I am an undergraduate student currently enrolled in UBC's Engineering Physics 
-    program. Below you will find a handy carousel of my many skills aswell as a few 
-    personal details to get to know me better.
-  </p>
-  
-  <div class="carousel">
-    <!-- Prev Button -->
-    <button class="carousel-btn prev">&#10094;</button>
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>Instrumentation Engineering Co-op <span class="muted">· ScopeSys Microfluidics</span></h3>
+          <span class="date">May 2026 — Present</span>
+        </div>
+        <ul>
+          <li>Implemented an open-loop controller in C on a Zephyr firmware stack with handoff to a tuned PID loop, smoothing control ahead of product launch.</li>
+          <li>Built Python CLI and GUI tooling with real-time telemetry for a multi-channel pressure and vacuum instrument used for nanoparticle confinement.</li>
+          <li>Designed precision alignment fixtures and motion-control systems for assembling multilayer lab-on-chip devices.</li>
+        </ul>
+      </div>
+      <div class="entry">
+        <div class="entry-head">
+          <h3>B.A.Sc. Engineering Physics <span class="muted">· University of British Columbia</span></h3>
+          <span class="date">2023 — 2027</span>
+        </div>
+      </div>
+    </section>
 
-    <!-- Cards -->
-    <div class="about-card active" id="tech">
-      <h3>Technical Skills</h3>
-      <p>
-        - Solidworks/OnShape <br>
-        - Java/C++/C <br>
-        - Verilog and Quartus Simulation <br>
-        - 3d Rendering and Visualization <br>
-      </p>
-    </div>
-
-    <div class="about-card" id="nontech">
-      <h3>Non-Technical Skills</h3>
-      <p>
-        - Fluent in English and French <br>
-        - Basic Mandarin and Korean <br>
-        - First Aid CPR-C + AED certified <br>
-        - Swim and Water Safety Instructor Certified <br>
-        - Can do a handstand
-      </p>
-    </div>
-
-    <div class="about-card" id="hobbies">
-      <h3>Hobbies</h3>
-      <p>
-        - Weightlifting <br>
-        - Amateur gymnastics and acrobatics <br>
-        - Woodworking <br>
-        - Piano <br>
-        - Reading <br>
-        - Currently Studying Chinese
-      </p>
-    </div>
-
-    <div class="about-card" id="books">
-      <h3>Favourite Books</h3>
-      <p>
-        - "The Name of The Wind" <br>
-        - "Project Hail Mary" <br>
-        - "Frankenstein; or, The Modern Prometheus" <br>
-        - "Pride and Prejudice"
-      </p>
-    </div>
-
-    <div class="about-card" id="movies">
-      <h3>Favourite Movies</h3>
-      <p>
-        - Interstellar <br>
-        - The Princess Bride <br>
-        - Curious George the Movie
-      </p>
-    </div>
-
-    <!-- Next Button -->
-    <button class="carousel-btn next">&#10095;</button>
-
-    <!-- Dots Nav -->
-    <div class="carousel-nav">
-      <span class="active" data-card="tech"></span>
-      <span data-card="nontech"></span>
-      <span data-card="hobbies"></span>
-      <span data-card="books"></span>
-      <span data-card="movies"></span>
-    </div>
-  </div>
-  
-  <a href="resume.pdf" download class="resume-btn">
-    <i class="fa-solid fa-file-arrow-down"></i> Download Resume
-  </a>
-</section>
-      
-        
-        <!-- Projects -->
     <section id="projects">
       <h2>Projects</h2>
-      <div class="project-grid">
-  <a href="Robot_Summer.html">
-    <img src="images/Robot%20Summer.png" alt="Robot Summer Project">
-    <h3>Robot Summer</h3>
-  </a>
-  <a href="CAD_Design_Project.html">
-    <img src="images/CAD%20Project.png" alt="CAD Design Project">
-    <h3>UBCO CAD Design Competition</h3>
-  </a>
-  <a href="Sustainable_Trees.html">
-    <img src="images/TREES.png" alt="Sustainable Trees">
-    <h3>Sustainable Developement Competition</h3>
-  </a>
-  <a href="Verilog_CPU.html">
-    <img src="images/Verilog%20CPU.png" alt="Verilog CPU">
-    <h3>Verilog CPU</h3>
-  </a>
-</div>
 
+      <article class="project">
+        <div class="entry-head">
+          <h3>Multi-Agent Autonomous Drone System</h3>
+          <span class="date">Jan — Apr 2026</span>
+        </div>
+        <p>Distributed ROS architecture for simulated drones with LiDAR/IMU/optical-flow sensor fusion and TensorFlow OCR models (&gt;98% accuracy). Maximum competition score and 2nd of 15 teams in ENPH 353.</p>
+        <p class="tags">ROS · Gazebo · Python · TensorFlow · OpenCV</p>
+      </article>
+
+      <article class="project">
+        <div class="entry-head">
+          <h3>EEG Brain-Computer Interface</h3>
+          <span class="date">Jan 2026 — Ongoing</span>
+        </div>
+        <p>Multi-stage analog front end for measuring alpha and beta brainwaves, with active filtering and 60&nbsp;Hz notch suppression, feeding a 16-bit ADC read by an ESP32 and streamed to host software.</p>
+        <p class="tags">Analog design · KiCad · LTspice · ESP32 · C++</p>
+      </article>
+
+      <article class="project">
+        <div class="entry-head">
+          <h3>Robot Summer: Autonomous Rescue Robot</h3>
+          <span class="date">Summer 2025</span>
+        </div>
+        <p>ENPH 253's scenario was a burning pet shelter: two minutes to find stuffed-animal "pets" in a hazard-filled course and bring them to safety. Our team built a fully autonomous robot with custom ESP32 PCBs, PID motor control and state-machine navigation.</p>
+        <p class="tags">ESP32 · KiCad · C++ · Onshape · Laser cutting · Waterjet</p>
+        <img src="images/robot-final.jpg" alt="The finished competition robot" class="figure">
+        <details>
+          <summary>Read more</summary>
+          <h4>Mechanical</h4>
+          <p>We started with quick shape prototypes cut on the laser cutter to get a feel for the robot's form, then used the same process for the final chassis and extended it to waterjet-cut parts.</p>
+          <div class="gallery">
+            <img src="images/prototype1.jpg" alt="Early prototype" loading="lazy">
+            <img src="images/prototype2.jpg" alt="Second prototype" loading="lazy">
+            <img src="images/prototype3.png" alt="CAD model" loading="lazy">
+            <img src="images/final-build.jpg" alt="Final build" loading="lazy">
+          </div>
+          <h4>Electrical</h4>
+          <p>The electronics were a crash course in real-world debugging: parasitic capacitance, noise coupling through ground planes, and the moment you realize the lumped circuit model really is just a model. I designed boards in KiCad with separated analog and digital paths and debugged them with a scope and wavegen.</p>
+          <div class="gallery">
+            <img src="images/pcb-kicad.webp" alt="KiCad schematic" loading="lazy">
+            <img src="images/PCB-render.png" alt="PCB render" loading="lazy">
+            <img src="images/PCB-render2.png" alt="PCB render, alternate view" loading="lazy">
+            <img src="images/pcb.jpg" alt="Assembled PCB" loading="lazy">
+          </div>
+          <h4>Software</h4>
+          <p>Firmware was written in object-oriented C++, with each component wrapped behind a clean interface so higher-level navigation logic could treat hardware as a black box. PID gains were tuned wirelessly over WiFi.</p>
+          <img src="images/course.png" alt="Competition course layout" class="figure" loading="lazy">
+        </details>
+      </article>
+
+      <article class="project">
+        <div class="entry-head">
+          <h3>16-bit RISC CPU</h3>
+          <span class="date">Sep 2024 — Jan 2025</span>
+        </div>
+        <p>A custom RISC processor in Verilog with ARM-inspired instruction decoding and memory-mapped I/O, verified with self-checking testbenches and deployed to a DE1-SoC FPGA.</p>
+        <p class="tags">Verilog · Quartus · ModelSim · FPGA</p>
+        <details>
+          <summary>Read more</summary>
+          <p>A state-machine controller interprets the instruction decoder's output and drives control signals for the ALU and memory through fetch, decode, execute, memory and writeback.</p>
+          <img src="images/Instruction%20Decoder.png" alt="Instruction decoder RTL" class="figure" loading="lazy">
+          <p>The instruction set covers arithmetic (<code>ADD</code>, <code>SUB</code>), logic (<code>AND</code>, <code>MVN</code>, <code>CMP</code>), data movement (<code>MOV</code>), memory access (<code>LDR</code>, <code>STR</code>) and branches (<code>B</code>, <code>BEQ</code>, <code>BNE</code>, <code>BLT</code>, <code>BLE</code>). Load/store support made it possible to run small programs and watch the CPU's behaviour directly on the board.</p>
+          <img src="images/ALU.png" alt="ALU RTL" class="figure" loading="lazy">
+          <p>The top-level design ties the decoder, ALU and memory into a single datapath. The project left me keen to go further into branch prediction, superscalar designs and vector processors like GPUs.</p>
+          <img src="images/Complete.png" alt="Complete CPU RTL" class="figure" loading="lazy">
+        </details>
+      </article>
+
+      <article class="project">
+        <div class="entry-head">
+          <h3>UBCO CAD Design Competition: 1st Place</h3>
+          <span class="date">2024</span>
+        </div>
+        <p>Our team won first place out of 94 teams with a complete ski hill modelled in SolidWorks, including a working chairlift and snowcat, totalling over 12,000 parts.</p>
+        <p class="tags">SolidWorks · Rendering</p>
+        <div class="video">
+          <iframe src="https://www.youtube-nocookie.com/embed/-V5GGG-GRuw" title="CAD competition ski hill walkthrough" loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </article>
     </section>
-        
-        
-    </main>
-       
-<script>
-const dots = document.querySelectorAll('.carousel-nav span');
-const cards = document.querySelectorAll('.about-card');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
-let currentIndex = 0;
 
-function showCard(index) {
-  // wrap around
-  if (index < 0) index = cards.length - 1;
-  if (index >= cards.length) index = 0;
-  currentIndex = index;
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>I'm always happy to talk about hardware, robotics or co-op opportunities. The best way to reach me is by <a href="mailto:aidandwebb@gmail.com">email</a>, or find me on <a href="https://www.linkedin.com/in/aidandwebb/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+    </section>
+  </main>
 
-  // update cards
-  cards.forEach(card => card.classList.remove('active'));
-  cards[currentIndex].classList.add('active');
-
-  // update dots
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[currentIndex].classList.add('active');
-}
-
-// Dots click
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => showCard(i));
-});
-
-// Arrow buttons
-prevBtn.addEventListener('click', () => showCard(currentIndex - 1));
-nextBtn.addEventListener('click', () => showCard(currentIndex + 1));
-
-// Init
-showCard(0);
-</script>
-
-
-    </body>
-    
+  <footer class="footer">© 2026 Aidan Webb</footer>
+</body>
 </html>
