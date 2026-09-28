@@ -67,8 +67,8 @@
             Robot Summer, a 16-bit CPU on an FPGA, and a team of simulated drones.
           </p>
           <p>
-            Away from the bench I lift, practise gymnastics (yes, I can do a handstand), do woodworking, play piano,
-            and am slowly working through Mandarin. I'm also fluent in French. Current favourite book:
+            In my sparetime I like to lift weights, practise gymnastics (I can do a handstand), play piano,
+            and am slowly working through a few Mandarin textbooks. I'm also fluent in French. Current favourite book:
             <em>The Name of the Wind</em>.
           </p>
           <p>Some of the tools I've been working with recently:</p>
@@ -135,8 +135,61 @@
     <section id="projects" class="section">
       <h2 class="section-title"><span>03.</span> Some Things I've Built</h2>
 
-      <!-- Robot Summer -->
+      <!-- Drones -->
       <article class="card feature">
+        <div class="feature-media">
+          <span class="badge"><i class="fa-solid fa-trophy"></i> 2nd of 15 teams</span>
+          <img src="images/drone-waypoints.jpg" alt="Top drone's view of the course with the bottom drone's position and waypoints overlaid">
+        </div>
+        <div class="feature-body">
+          <p class="feature-date">Jan – Apr 2026</p>
+          <h3>Multi-Agent Drone System</h3>
+          <div class="feature-desc">
+            <p>For ENPH 353, our simulated robot had to navigate a Gazebo course, find clueboards and read them, fast and without touching the grass or the pedestrians. We flew two drones: one hovering high over the field as a live "satellite", the other flying the course and reading signs with a custom OCR model.</p>
+            <p class="highlight"><i class="fa-solid fa-helicopter"></i> Maximum score, 2nd of 15 teams, over 98% OCR accuracy</p>
+          </div>
+          <ul class="tags"><li>ROS</li><li>Gazebo</li><li>Python</li><li>OpenCV</li><li>TensorFlow</li></ul>
+        </div>
+        <details class="more">
+          <summary><span>Read the full write-up</span></summary>
+          <div class="more-body">
+            <div class="more-text">
+              <h4><i class="fa-solid fa-lightbulb"></i> Strategy</h4>
+              <p>We tried a few ideas before settling: a custom robot through an Onshape-to-URDF pipeline (in Gazebo, cubes are about as good as curves), a robot that jumped between regions (too hard to land, and possibly against the rules), and imitation and reinforcement learning (unstable and thrown off by wind). We ended up with classical control, PID plus state estimation, for all flight, and saved the machine learning for reading signs.</p>
+              <p>The final design splits global perception from local control. A "mother" drone hovers over the course, stabilized in XY and yaw, and starts the timer. The second drone then uses the mother's downward camera to locate itself and flies a set of waypoints, photographing clueboards as it goes, and stops the timer once the last clue is submitted.</p>
+            </div>
+            <div class="more-text">
+              <h4><i class="fa-solid fa-satellite"></i> Top drone</h4>
+              <p>A single ROS controller class holds the drone above the field. The course's centre of mass, from the moments of an HSV mask on the down camera, gives the XY error; the IMU gives a world-to-body rotation so world-frame forces can be applied correctly; and the depth camera sets the altitude, averaging the upper percentile of distances so trees don't throw it off. A leaky integrator on the XY error cancels the steady offset from the wind.</p>
+            </div>
+            <div class="gallery gallery-2">
+              <img src="images/drone-gazebo.jpg" alt="Drone hovering in Gazebo while hand-tuning thrust from the terminal" loading="lazy">
+              <img src="images/drone-clueboard.jpg" alt="A clueboard reading SIZE / FIVE seen from the drone's camera" loading="lazy">
+            </div>
+            <div class="more-text">
+              <h4><i class="fa-solid fa-location-crosshairs"></i> Bottom drone</h4>
+              <p><strong>Localization:</strong> it subscribes to the top drone's camera, computes a homography from the image to a normalized field frame, and finds its own bright purple top in that frame. That gives a consistent, scale-invariant (u, v) position.</p>
+              <p><strong>Navigation:</strong> a fixed list of waypoints, each with a target position, altitude, yaw and dwell time, run by a small state machine (running, waiting, done). At each waypoint the drone settles, grabs a front-camera frame and reads the sign in-flight, since the model is light enough to run while it moves.</p>
+              <p><strong>Control:</strong> PID on pixel error for XY, PD with gravity compensation on depth for Z, and IMU feedback for yaw and attitude.</p>
+            </div>
+            <div class="more-text">
+              <h4><i class="fa-solid fa-font"></i> Reading the signs</h4>
+              <p>My teammate Derek Wei built the OCR as a library the controller calls with one function, which returns the clue type and value. Blue thresholding and morphological closing find the sign, and its largest contour is warped by homography to a flat 600&nbsp;×&nbsp;400 view. The characters are then thresholded, split into the type and clue rows, and cropped to 100&nbsp;×&nbsp;100 before classification.</p>
+            </div>
+            <img src="images/drone-ocr-pipeline.png" alt="OCR pipeline: input image, clueboard detection, perspective rectification, character segmentation, classification, post-processing" class="wide diagram-img" loading="lazy">
+            <div class="more-text">
+              <p>The classifier is a small three-layer CNN trained in Keras on a synthetic set of 36 characters (A–Z, 0–9) rendered in Ubuntu Mono, then noised, augmented, thresholded and eroded to look like the output of the real pipeline, and exported to TensorFlow Lite for fast inference. Validation accuracy was near perfect, but the training data was very close to the real signs, so the real limit was preprocessing: glare and thresholding that thinned, thickened or merged strokes caused far more misreads than the network did.</p>
+            </div>
+            <div class="gallery gallery-2">
+              <img src="images/drone-ocr-training.jpg" alt="Synthetic character plate, augmented plate, and thresholded result" loading="lazy">
+              <img src="images/drone-accuracy.png" alt="Training and validation accuracy by epoch" loading="lazy">
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- Robot Summer -->
+      <article class="card feature flip">
         <div class="feature-media">
           <span class="badge"><i class="fa-regular fa-star"></i> Featured</span>
           <img src="images/final-build.jpg" alt="Robot Summer autonomous rescue robot">
@@ -183,7 +236,7 @@
       </article>
 
       <!-- CPU -->
-      <article class="card feature flip">
+      <article class="card feature">
         <div class="feature-media diagram">
           <img src="images/Complete.png" alt="Top-level RTL of the 16-bit CPU">
         </div>
@@ -217,7 +270,7 @@
       </article>
 
       <!-- CAD -->
-      <article class="card feature">
+      <article class="card feature flip">
         <div class="feature-media">
           <span class="badge"><i class="fa-solid fa-trophy"></i> 1st of 94 teams</span>
           <img src="images/CAD%20Project.png" alt="Rendered snowcat from the CAD competition entry" class="crop-top">
@@ -244,15 +297,6 @@
 
       <h3 class="subhead">Other Noteworthy Projects</h3>
       <div class="mini-grid">
-        <article class="card mini">
-          <div class="mini-top">
-            <i class="fa-solid fa-helicopter mini-icon"></i>
-            <span class="mini-date">Jan – Apr 2026</span>
-          </div>
-          <h4>Multi-Agent Drone System</h4>
-          <p>Distributed ROS architecture for simulated drones with LiDAR, IMU and optical-flow sensor fusion, plus TensorFlow OCR models at over 98% accuracy. Maximum score and 2nd of 15 teams in ENPH 353.</p>
-          <ul class="tags"><li>ROS</li><li>Gazebo</li><li>Python</li><li>TensorFlow</li><li>OpenCV</li></ul>
-        </article>
         <article class="card mini">
           <div class="mini-top">
             <i class="fa-solid fa-brain mini-icon"></i>
